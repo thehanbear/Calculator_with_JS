@@ -78,6 +78,15 @@ function insertFunction(fn) {
   updateDisplay();
 }
 
+function insertSci(fn) {
+	const	value = displayValue;
+	const result = calculateSci(fn, value);
+	
+	displayValue = result;
+	isNewInput = true;
+	updateDisplay();
+}
+
 function calculate(numA, numB, op) {
   const a = parseFloat(numA);
   const b = parseFloat(numB);
@@ -98,68 +107,80 @@ function calculate(numA, numB, op) {
 }
 
 //
-function sciFunction(numA, sci) {
-	const a = parseFloat(numA);
+function calculateSci(sci, numA) {
 
-	if (Number.isNaN(a) && sci !== "pi" && sci !== "e") {
+	if (sci === "pi") {
+    return Math.PI.toString();
+  }
+  if (sci === "e") {
+    return Math.E.toString();
+  }
+	const a = parseFloat(numA);
+	let result;
+
+	if (Number.isNaN(a)){
     return "Invalid number";
   }
 
   switch (sci) {
 		case "sin":
-      return Math.sin(a).toString();
+      result = Math.sin(a);
+			break;
 		case "cos":
-      return Math.cos(a).toString();
+      result = Math.cos(a);
+			break;
 		case "tan":
-      return Math.tan(a).toString();
+      result = Math.tan(a);
+			break;
 		case "sinh":
-      return Math.sinh(a).toString();
+      result =  Math.sinh(a);
+			break;
     case "cosh":
-      return Math.cosh(a).toString();
+      result = Math.cosh(a);
+			break;
     case "tanh":
-      return Math.tanh(a).toString();
+      result =  Math.tanh(a);
+			break;
 		case "exp":
-      return Math.exp(a).toString();      // eˣ
+      result = Math.exp(a);
+			break;
     case "ln":
-      return Math.log(a).toString();     
+      result = Math.log(a); 
+			break;  
     case "log10":
-      return Math.log10(a).toString();    // log₁₀
+      result = Math.log10(a);
+			break;
     case "pow2":
-      return Math.pow(a, 2).toString();   // x²
+      result = Math.pow(a, 2);
+			break;
     case "pow3":
-      return Math.pow(a, 3).toString();   // x³
+      result = Math.pow(a, 3);
+			break;
     case "pow10":
-      return Math.pow(10, a).toString();  // 10ˣ
+      result = Math.pow(10, a);
+			break;
 
 		case "sqrt":
 			if (a < 0) 
 				return "Can't tale Squre root of negative number";
-      return Math.sqrt(a).toString();
-		
-		case "inv":
-      if (a === 0) return "Error";
-      return (1 / a).toString();
+      result = Math.sqrt(a);
+			break;
 
     case "fact": {
       if (!Number.isInteger(a) || a < 0) {
         return "Factorial only for positive integers";
       }
       let res = 1;
-      for (let i = 2; i <= a; i++) res *= i;
-      return res.toString();
+      for (let i = 2; i <= a; i++) 
+				res *= i;
+      result = res;
+			break;
     }
-
-		case "pi":
-      return Math.PI.toString();
-    case "e":
-      return Math.E.toString();
-
     default:
       return "Invalid operator";
   }
+	return result.toString();
 }
-
-updateDisplay();
 
 
 // It's winter time :)
@@ -167,16 +188,34 @@ const NUM_FLAKES = 80;
 
 const rand = (min, max) => Math.random() * (max - min) + min;
 
-for (let i = 0; i < NUM_FLAKES; i++) {
-  const flake = document.createElement("div");
-  flake.className = "snowflake";
+function generateFakeSnow() {
 
-  const size = rand(3, 8);
+  const flake = document.createElement("div");
+
+	const randomDepth = Math.floor(rand(0, 3));
+	const depthClass = 
+		randomDepth === 0
+		? 'snowflake-close'
+		: randomDepth === 1 
+		? 'snowflake-far'
+		: 'snowflake-little-far';
+	
+	flake.className = `snowflake ${depthClass}`;
+
+  const size = rand(4, 10);
 
   flake.style.left = `${rand(0, 100)}vw`;
   flake.style.animationDuration = `${rand(5, 10)}s`;
-  flake.style.opacity = rand(0.3, 1);
   flake.style.width = flake.style.height = `${size}px`;
 
   document.body.appendChild(flake);
 }
+
+function makeItRainSnow () {
+	for (let i = 0; i < NUM_FLAKES; i++) {
+		generateFakeSnow();
+	}
+}
+
+updateDisplay();
+makeItRainSnow();

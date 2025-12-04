@@ -20,52 +20,55 @@
 				</div>
         <input class="input-form" type="text" id="calculator-input" value="" readonly/>
 					<div class="buttons">
+						<!--row 1-->
+						<button onclick="insertSci('pow2')" class="btn-sci">x²</button>
+						<button onclick="insertSci('pow3')" class="btn-sci"> x³</button>
+						<button onclick="insertSci('pow10')" class="btn-sci">10ˣ</button>			
 						<button onclick="insertFunction('AC')" class="btn-function">AC</button>
 						<button onclick="insertFunction('+/-')" class="btn-function">+/-</button>
 						<button onclick="insertFunction('%')" class="btn-function">%</button>
 						<button onclick="insertOperator('/')" class="btn-operator">÷</button>
 
+						<!--row 2-->
+						<button onclick="insertSci('exp')" class="btn-sci">eˣ</button>
+						<button onclick="insertSci('ln')" class="btn-sci">ln</button>
+						<button onclick="insertSci('log10')" class="btn-sci">log₁₀</button>
 						<button onclick="insertNumber('7')" class="btn-number">7</button>
 						<button onclick="insertNumber('8')" class="btn-number">8</button>
 						<button onclick="insertNumber('9')" class="btn-number">9</button>
 						<button onclick="insertOperator('x')" class="btn-operator">x</button>
 
+						<!--row 3-->
+						<button onclick="insertSci('sin')" class="btn-sci">sin</button>
+						<button onclick="insertSci('cos')" class="btn-sci">cos</button>
+						<button onclick="insertSci('tan')" class="btn-sci">tan</button>
 						<button onclick="insertNumber('4')" class="btn-number">4</button>
 						<button onclick="insertNumber('5')" class="btn-number">5</button>
 						<button onclick="insertNumber('6')" class="btn-number">6</button>
 						<button onclick="insertOperator('-')" class="btn-operator">-</button>
 
+						<!--row 4-->
+						<button onclick="insertSci('sinh')" class="btn-sci">sinh</button>
+						<button onclick="insertSci('cosh')" class="btn-sci">cosh</button>
+						<button onclick="insertSci('tanh')" class="btn-sci">tanh</button>
 						<button onclick="insertNumber('1')" class="btn-number">1</button>
 						<button onclick="insertNumber('2')" class="btn-number">2</button>
 						<button onclick="insertNumber('3')" class="btn-number">3</button>
 						<button onclick="insertOperator('+')" class="btn-operator">+</button>
 
+						<!--row 5-->
+						<button onclick="insertSci('fact')" class="btn-sci">X!</button>
+						<button onclick="insertSci('sqrt')" class="btn-sci">√x</button>
+						<button onclick="insertSci('pi')" class="btn-sci">π</button>
+						<button onclick="insertSci('e')" class="btn-sci">e</button>
 						<button onclick="insertNumber('0')" class="btn-number-zero">0</button>
 						<button onclick="insertDot('.')" class="btn-number">.</button>
 						<button onclick="insertEqual ('=')" class="btn-operator2">=</button>	
 
-						<!--scientific calculator-->
-						<button onclick="sciFunction('sin')" class="btn-operator">sin</button>
-						<button onclick="sciFunction('cos')" class="btn-operator">cos</button>
-						<button onclick="sciFunction('tan')" class="btn-operator">tan</button>
-						<button onclick="sciFunction('sinh')" class="btn-operator">sinh</button>
-						<button onclick="sciFunction('cosh')" class="btn-operator">cosh</button>
-						<button onclick="sciFunction('tanh')" class="btn-operator">tanh</button>
-						<button onclick="sciFunction('exp')" class="btn-operator">eˣ</button>
-						<button onclick="sciFunction('ln')" class="btn-operator">ln</button>
-						<button onclick="sciFunction('log10')" class="btn-operator">log10</button>
-						<button onclick="sciFunction('pow2')" class="btn-operator">pow2</button>
-						<button onclick="sciFunction('pow3')" class="btn-operator">pow3</button>
-						<button onclick="sciFunction('pow10')" class="btn-operator">pow10</button>
-						<button onclick="sciFunction('sqrt')" class="btn-operator">√x</button>
-						<button onclick="sciFunction('inv')" class="btn-operator">inv</button>
-						<button onclick="sciFunction('fact')" class="btn-operator">fact</button>
-						<button onclick="sciFunction('pi')" class="btn-operator">π</button>
-						<button onclick="sciFunction('e')" class="btn-operator">e</button>
 					</div>	
-		</div>
-	</main>
-<script src="scientific_script.js"></script>
-	
+			</div>
+		</main>
+	<script src="scientific_script.js"></script>
+		<p class="copyright">@ All Rights Reserved | Hangaram LS</p>
 </body>
 </html>
