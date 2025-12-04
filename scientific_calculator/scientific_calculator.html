@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Calculator</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="scientific_style.css">
 </head>
 
 
@@ -43,10 +43,29 @@
 						<button onclick="insertNumber('0')" class="btn-number-zero">0</button>
 						<button onclick="insertDot('.')" class="btn-number">.</button>
 						<button onclick="insertEqual ('=')" class="btn-operator2">=</button>	
+
+						<!--scientific calculator-->
+						<button onclick="sciFunction('sin')" class="btn-operator">sin</button>
+						<button onclick="sciFunction('cos')" class="btn-operator">cos</button>
+						<button onclick="sciFunction('tan')" class="btn-operator">tan</button>
+						<button onclick="sciFunction('sinh')" class="btn-operator">sinh</button>
+						<button onclick="sciFunction('cosh')" class="btn-operator">cosh</button>
+						<button onclick="sciFunction('tanh')" class="btn-operator">tanh</button>
+						<button onclick="sciFunction('exp')" class="btn-operator">eˣ</button>
+						<button onclick="sciFunction('ln')" class="btn-operator">ln</button>
+						<button onclick="sciFunction('log10')" class="btn-operator">log10</button>
+						<button onclick="sciFunction('pow2')" class="btn-operator">pow2</button>
+						<button onclick="sciFunction('pow3')" class="btn-operator">pow3</button>
+						<button onclick="sciFunction('pow10')" class="btn-operator">pow10</button>
+						<button onclick="sciFunction('sqrt')" class="btn-operator">√x</button>
+						<button onclick="sciFunction('inv')" class="btn-operator">inv</button>
+						<button onclick="sciFunction('fact')" class="btn-operator">fact</button>
+						<button onclick="sciFunction('pi')" class="btn-operator">π</button>
+						<button onclick="sciFunction('e')" class="btn-operator">e</button>
 					</div>	
 		</div>
 	</main>
-<script src="script.js"></script>
+<script src="scientific_script.js"></script>
 	
 </body>
 </html>
